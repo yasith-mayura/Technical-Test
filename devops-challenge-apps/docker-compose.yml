@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./web
+    ports:
+      - "3000:3000"
+
+
+    environment:
+    - PORT=${WEB_PORT}
+    - API_HOST=${API_HOST}
+
+  postgres:
+    image: postgres:15  # Use the official PostgreSQL image, version 15
+    container_name: my_postgres_db  # Name of the container
+    environment:
+      POSTGRES_USER: myuser       # Set the PostgreSQL user
+      POSTGRES_PASSWORD: mypassword  # Set the PostgreSQL password
+      POSTGRES_DB: mydatabase      # Set the PostgreSQL database name
+    ports:
+      - "5432:5432"
+
+
+  api:
+    build: ./api
+    ports:
+      - "4000:4000"
+    environment:
+    - PORT=${API_PORT}
+    - DB=${API_DB}
+
+
