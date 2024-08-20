@@ -144,7 +144,8 @@ http {
 
         server {
            listen 80;
-           server_name web.yasithmayura.me;
+           server_name web.example.com;
+           #server_name web.yasithmayura.me;	
 
             location / {
 		proxy_pass http://localhost:3000;
@@ -157,7 +158,8 @@ http {
         }
 	server {
            listen 80;
-           server_name api.yasithmayura.me;
+           server_name api.example.com;
+	   #server_name api.yasithmayura.me;
 
             location / {
                 proxy_pass http://localhost:4000;
