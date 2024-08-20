@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the web app directory
-cd /path/to/devops-challenge-apps/web
+cd /root/Technical_Test/devops-challenge-apps/web
 
 # Pull the latest changes from the GitHub repository
 echo "Pulling the latest changes from the repository..."
